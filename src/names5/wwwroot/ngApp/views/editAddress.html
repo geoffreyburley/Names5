@@ -1,0 +1,29 @@
+﻿<h3>Edit address page.</h3>
+
+<form ng-submit="controller.editAddress()">
+
+    <div>
+
+        <input type="text" placeholder="Insert the first name here..." ng-model="controller.address.addressType" />
+        <label>Address type</label>
+    </div>
+    <div>
+        <input type="text" placeholder="Insert the last name here..." ng-model="controller.address.streetAddress" />
+        <label>Street address</label>
+    </div>
+    <div>
+        <input type="text" placeholder="Insert the city name here..." ng-model="controller.address.city" />
+        <label>City</label>
+    </div>
+    <div>
+        <input type="text" placeholder="Insert the state name here..." ng-model="controller.address.stateName" />
+        <label>State</label>
+    </div>
+    <div>
+        <input type="text" placeholder="Insert the postal code here..." ng-model="controller.address.postalCode" />
+        <label>Postal code</label>
+    </div>
+
+    <input type="submit" class="btn btn-success" value="Make these changes" />
+
+</form>

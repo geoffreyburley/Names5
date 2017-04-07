@@ -1,0 +1,56 @@
+﻿<h3>Admininstrator's page</h3>
+<p>
+    {{controller.message}}
+</p>
+<div>
+    <table class="table table-bordered, table-striped">
+        <tr>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Date of birth</th>
+            <th>Edit name</th>
+
+        </tr>
+        <tr>
+            <td>{{controller.name.firstName}}</td>
+            <td>{{controller.name.lastName}}</td>
+            <td>{{controller.name.dateOfBirth}}</td>
+            <td>
+                <a ui-sref="editName({id: controller.name.id})" class="btn-warning">Edit name</a>
+            </td>
+        </tr>
+
+    </table>
+
+
+</div>
+<div>
+    <table class="table table-bordered, table-striped" .>
+        <tr>
+            <th>Description</th>
+            <th>Street address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Postal code</th>
+            <th>Edit address</th>
+            <th>Delete addess</th>
+        </tr>
+        <tr ng-repeat="nameaddress in controller.name.nameAddresses">
+            <td>{{nameaddress.address.addressType}}</td>
+            <td>{{nameaddress.address.streetAddress}}</td>
+            <td>{{nameaddress.address.city}}</td>
+            <td>{{nameaddress.address.stateName}}</td>
+            <td>{{nameaddress.address.postalCode}}</td>
+            <td>
+                <a ui-sref="editAddress({id: nameaddress.address.id})" class="btn-warning">Edit address</a>
+            </td>
+            <td>
+                <button class="btn btn-danger" ng-click="controller.deleteAddress(nameaddress.address.id)">Delete address             </button>
+            </td>
+        </tr>
+    </table>
+</div>
+<div>
+    <a ui-sref="addAddressUnderName({id: controller.name.id})" class="btn-warning">Add an address</a>
+
+</div>

@@ -1,0 +1,31 @@
+<h2>Home</h2>
+<p>
+    {{controller.message}}
+</p>
+
+<table class="table table-striped, table-bordered">
+    <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Edit name</th>
+        <th>Delete name</th>
+        
+    </tr>
+    <tr ng-repeat="name in controller.names">
+        
+        
+        <td>
+            <a ui-sref="about({id: name.id})">{{name.firstName}}</a>
+        </td>
+        <td>
+            <a ui-sref="about({id: name.id})">{{name.lastName}}</a>
+        </td>
+        <td>
+            <a ui-sref="about({id: name.id})" class="btn-warning">Edit name</a>
+        </td>
+        <td>
+            <button class="btn btn-danger" ng-click="controller.DeleteName(name.id)">Delete name</button>
+        </td>
+        
+    </tr>
+</table>
